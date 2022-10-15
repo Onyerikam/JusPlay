@@ -1,0 +1,10 @@
+import 'controller/delete_from_saved_controller.dart';import 'package:flutter/material.dart';import 'package:jusplay/core/app_export.dart';import 'package:jusplay/widgets/custom_button.dart';
+// ignore_for_file: must_be_immutable
+class DeleteFromSavedDialog extends StatelessWidget {DeleteFromSavedDialog(this.controller);
+
+DeleteFromSavedController controller;
+
+@override Widget build(BuildContext context) { return Container(width: double.infinity, decoration: AppDecoration.fillBluegray800.copyWith(borderRadius: BorderRadiusStyle.roundedBorder30), child: Column(mainAxisSize: MainAxisSize.min, crossAxisAlignment: CrossAxisAlignment.center, mainAxisAlignment: MainAxisAlignment.start, children: [Padding(padding: getPadding(left: 31, top: 46, right: 31), child: CommonImageView(svgPath: ImageConstant.imgTrash77X73, height: getVerticalSize(77.00), width: getHorizontalSize(73.00))), Padding(padding: getPadding(left: 31, top: 35, right: 31), child: Text("lbl_are_you_sure".tr, overflow: TextOverflow.ellipsis, textAlign: TextAlign.left, style: AppStyle.txtPoppinsMedium18)), Container(width: getHorizontalSize(255.00), margin: getMargin(left: 31, top: 13, right: 31), child: Text("msg_by_doing_this3".tr, maxLines: null, textAlign: TextAlign.center, style: AppStyle.txtPoppinsRegular12WhiteA700a2)), CustomButton(width: 263, text: "lbl_cancel".tr, margin: getMargin(left: 31, top: 36, right: 31), onTap: onTapBtnCancel), Container(width: getHorizontalSize(51.00), margin: getMargin(left: 31, top: 32, right: 31, bottom: 20), decoration: BoxDecoration(borderRadius: BorderRadius.circular(getHorizontalSize(8.00))), child: Column(mainAxisSize: MainAxisSize.min, crossAxisAlignment: CrossAxisAlignment.center, mainAxisAlignment: MainAxisAlignment.start, children: [Align(alignment: Alignment.centerLeft, child: GestureDetector(onTap: () {onTapTxtDelete();}, child: Text("lbl_delete".tr, overflow: TextOverflow.ellipsis, textAlign: TextAlign.left, style: AppStyle.txtPoppinsRegular16)))]))])); } 
+onTapBtnCancel() { Get.back(); } 
+onTapTxtDelete() { Get.toNamed(AppRoutes.emptyStateDownloadingScreen); } 
+ }

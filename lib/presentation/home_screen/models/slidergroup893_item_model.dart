@@ -1,0 +1,1 @@
+class Slidergroup893ItemModel { }
